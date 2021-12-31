@@ -19,9 +19,9 @@ axiosClient.interceptors.response.use(
 );
 
 export const weatherApi = {
-  fetchWeather({ q }: WeatherQueryParams): Promise<WeatherAPIResponse> {
+  fetchWeather({ key, q }: WeatherQueryParams): Promise<WeatherAPIResponse> {
     return axiosClient.get("/current.json", {
-      params: { key: process.env.REACT_APP_WEATHER_API_KEY, q },
+      params: { key: key || process.env.REACT_APP_WEATHER_API_KEY, q },
     });
   },
 };

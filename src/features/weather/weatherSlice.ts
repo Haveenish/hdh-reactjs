@@ -30,6 +30,9 @@ const weatherSlice = createSlice({
       };
       state.loading = false;
     },
+    clearWeather() {
+      return { ...initialState };
+    },
     fetchFailed(state) {
       state.loading = false;
     },
